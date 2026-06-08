@@ -73,13 +73,13 @@ app.get('/api/health', (req, res) => {
 app.use(errorHandler);
 
 // Serve React build in production (single-server deployment)
-if (process.env.NODE_ENV === 'production') {
-  const frontendDist = path.join(__dirname, '../frontend/dist');
-  app.use(express.static(frontendDist));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(frontendDist, 'index.html'));
-  });
-}
+// if (process.env.NODE_ENV === 'production') {
+//   const frontendDist = path.join(__dirname, '../frontend/dist');
+//   app.use(express.static(frontendDist));
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.join(frontendDist, 'index.html'));
+//   });
+// }
 
 const PORT = process.env.PORT || 5000;
 
